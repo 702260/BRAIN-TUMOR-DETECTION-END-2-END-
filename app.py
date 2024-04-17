@@ -7,3 +7,4 @@ from torch.cuba import is_available
 from torch.nn import sequential, Linear, SELU, Dropout, LogSigmoid
 from PIL import Image
 from torchvision.transforms import Compose, ToTensor, Resize
+from torchvision.models import resnet50
