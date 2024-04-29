@@ -10,5 +10,5 @@ from torchvision.transforms import Compose, ToTensor, Resize
 from torchvision.models import resnet50
 import os
 UPLOAD_FOLDER = os.path.join('static', 'photos')
-app = flask.Flask(__name__, template_folder='templates')
-app.secret_key = "secret key"
+app = flask.Flask(__name__, template_folder = 'templates')
+
