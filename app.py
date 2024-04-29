@@ -11,3 +11,4 @@ from torchvision.models import resnet50
 import os
 UPLOAD_FOLDER = os.path.join('static', 'photos')
 app = flask.Flask(__name__, template_folder = 'templates')
+
