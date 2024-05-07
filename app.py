@@ -15,4 +15,7 @@ app.secret_key = "secret key"
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
+def allow_file(filename):
+  return '.' in filename and filename.rsplit('.', 1)[1].lower in allowed
+
 
