@@ -17,5 +17,8 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 def allow_file(filename):
   return '.' in filename and filename.rsplit('.', 1)[1].lower in allowed
+  LABELS = ['None' , 'Meningioma', 'Glioma' , 'Pitutary']
+   device = "cuda" if is_available() else "cpu"
+resnet_model = resnet50
 
 
