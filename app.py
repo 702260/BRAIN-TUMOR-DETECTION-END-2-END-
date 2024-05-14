@@ -19,6 +19,7 @@ def allow_file(filename):
   return '.' in filename and filename.rsplit('.', 1)[1].lower in allowed
   LABELS = ['None' , 'Meningioma', 'Glioma' , 'Pitutary']
    device = "cuda" if is_available() else "cpu"
-resnet_model = resnet50
+resnet_model = resnet50(pretrained=true)
+for param in resnet_model.parameters():
 
 
