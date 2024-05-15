@@ -21,5 +21,6 @@ def allow_file(filename):
    device = "cuda" if is_available() else "cpu"
 resnet_model = resnet50(pretrained=true)
 for param in resnet_model.parameters():
+  param.requires_grad = True
 
 
