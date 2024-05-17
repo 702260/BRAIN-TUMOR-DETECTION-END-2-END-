@@ -22,5 +22,11 @@ def allow_file(filename):
 resnet_model = resnet50(pretrained=true)
 for param in resnet_model.parameters():
   param.requires_grad = True
+resnet_model = resnet50(pretrained=true)
+for param in resnet_model.parameters():
+  param.requires_grad = True
+n_inputs = resnet_models.fc.in_features
+resnet_model.fc = sequential(Linear(n_inputs,2048), SELU(),Dropout(p=0.4),Linear(2048,2048), SELU(), Dropout(p=0.4),Linear(2048, 4),LogSogmoid())
+
 
 
