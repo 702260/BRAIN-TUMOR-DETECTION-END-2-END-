@@ -25,6 +25,18 @@ for param in resnet_model.parameters():
 resnet_model = resnet50(pretrained=true)
 for param in resnet_model.parameters():
   param.requires_grad = True
+
+  n_inputs = resnet_model.fc.in_features
+
+  resnet_model.fc = Sequential(Linear(n_inputs,2048),
+                               SELU(),
+                               Dropout(p=0.4),
+                               Linear(2048, 2048),
+                               SELU(),
+                               Dropout(p=0.4),
+                               Linear(2048, 4),
+                               LogSigmoid())
+for name, child in resnet_model.named_children():
 n_inputs = resnet_models.fc.in_features
 resnet_model.fc = sequential(Linear(n_inputs,2048), SELU(),Dropout(p=0.4),Linear(2048,2048), SELU(), Dropout(p=0.4),Linear(2048, 4),LogSogmoid())
 for name, child in resnet_model.named_children():
