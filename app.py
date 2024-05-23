@@ -42,6 +42,8 @@ resnet_model.fc = sequential(Linear(n_inputs,2048), SELU(),Dropout(p=0.4),Linear
 for name, child in resnet_model.named_children():
   for name2, params in child.named_parameters():
     param.requires_grad = True
+    resnet_model.to(device)
+    resnet_model.load_state_dict
     
 
 
