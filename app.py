@@ -43,7 +43,7 @@ for name, child in resnet_model.named_children():
   for name2, params in child.named_parameters():
     param.requires_grad = True
     resnet_model.to(device)
-    resnet_model.load_state_dict
+    resnet_model.load_state_dict(./models/bt_resnet50_model.pt, map_location = DEVICE(device)))
     
 
 
