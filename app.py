@@ -46,7 +46,7 @@ for name, child in resnet_model.named_children():
     resnet_model.load_state_dict(./models/bt_resnet50_model.pt, map_location = DEVICE(device)))
     resnet_model.eval()
     def preprocess_image(image_bytes)
-    transport = Compose(
+    transport = Compose([resize((512,512)), Totensor()])
     
     
 
