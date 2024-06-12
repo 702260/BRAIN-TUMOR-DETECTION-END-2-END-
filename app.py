@@ -49,6 +49,9 @@ for name, child in resnet_model.named_children():
     transport = Compose([resize((512,512)), Totensor()])
     img = Image.open(BytesIO(image_bytes))
     return transform(img).unsqeeze(0)
+
+    def get_prediction(image_bytes)
+    
     
     
 
