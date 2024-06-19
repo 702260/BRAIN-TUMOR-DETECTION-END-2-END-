@@ -51,7 +51,8 @@ for name, child in resnet_model.named_children():
     return transform(img).unsqeeze(0)
 
     def get_prediction(image_bytes):
-    tensor = preprocess_image(image_bytes = image_bytes)
+      tensor = preprocess_image(image_bytes = image_bytes)
+
     
     
     
