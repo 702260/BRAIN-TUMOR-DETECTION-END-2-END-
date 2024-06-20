@@ -52,8 +52,12 @@ for name, child in resnet_model.named_children():
 
     def get_prediction(image_bytes):
       tensor = preprocess_image(image_bytes = image_bytes)
+      y_hat = resent_model((tensor.to(device))
+      class_id = argmax(y_hat.data, dim=1)
+      return str(int(class_id)), LABELS[int(class_id)]
 
-    
+    @app.route('/', method=['GET'])
+
     
     
 
