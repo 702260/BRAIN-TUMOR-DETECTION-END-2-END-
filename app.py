@@ -56,8 +56,28 @@ for name, child in resnet_model.named_children():
       class_id = argmax(y_hat.data, dim=1)
       return str(int(class_id)), LABELS[int(class_id)]
 
-    @app.route('/', method=['GET'])
+    @app.route('/', methods=['GET'])
+    
+    def uimg():
+        if flask.request.method == 'GET' :
+           return(flask.render_template('uimg.html'))
+        if flask.request.method == 'POST' :
+           file = flask.request.files['file']
+           img_bytes = file.read()
+           class_id, class_name = get_prediction(img_bytes)
+           return(flask.render_template('pred.html', result = class_name, file = file))
 
+  @app.errorhandler(500)
+   def server_error(error):
+       return render_template('error.html'), 500
+
+  if __name__ == '__main__':
+       app.run(debug=True)
+
+
+
+
+   
     
     
 
